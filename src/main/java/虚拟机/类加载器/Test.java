@@ -1,0 +1,12 @@
+package 虚拟机.类加载器;
+
+public class Test {
+    public static void main(String[] args) {
+        Thread t2 = new Thread();
+        //输出：sun.misc.Launcher$AppClassLoader@43be2d65 新线程没有设置ContextClassLoader，将继承其父线程的上下文类加载器
+        System.out.println(t2.getContextClassLoader());
+        
+        //输出：null 因为Thread.class 是引导类加载加载的，所以其父类加载器 是为空
+        System.out.println(t2.getClass().getClassLoader());
+    }
+}

@@ -1,10 +1,8 @@
 import enity.Student;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -36,7 +34,10 @@ public class Test {
     public static void main(String[] args) {
 //46+33+23+10+8+6+1
         System.out.println(getPercent(1,127));
-
+        BigDecimal a = new BigDecimal("100");
+        BigDecimal b = new BigDecimal("100.0");
+        System.out.println(Objects.equals(a.doubleValue(), 100.0)); // true
+        System.out.println(a.compareTo(b));
         double d = 5.0/10;
         System.out.println(d);
         System.out.println(unicodeDecode("\\u8054\\u901a"));
@@ -60,11 +61,11 @@ public class Test {
         for (Student student : studentList) {
             System.out.println(student.getId());
             try {
-                try {
-                    int b = 2/0;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    int b = 2/0;
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
 
 //                int i = 2/0;
             } catch (Exception e){

@@ -7,11 +7,15 @@ public class IntStreamTest {
     public static void main(String[] args) {
 
         IntStream natual = IntStream.generate(new IntNatualSupplier());
-        // 注意：无线序列必须先变成有限序列再打印
-        natual.limit(10).forEach(System.out::println);
+        // 注意：无限序列必须先变成有限序列再打印
+        natual.limit(10).forEach(IntStreamTest::print);
+    }
+
+    public static void print(Integer o) {
+        System.out.println(o);
+
     }
 }
-
 
 
 class IntNatualSupplier implements IntSupplier {

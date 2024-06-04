@@ -17,7 +17,9 @@ public class Test {
          * 4.Gson序列化
          * 5.Jackson序列化
          */
-        serializationUtilsShenCopy();
+//        serializationUtilsShenCopy();
+//        qianCopy();
+        cloneShenCopy();
     }
 
     private static void cloneShenCopy() {

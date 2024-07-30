@@ -14,7 +14,8 @@ public class Son extends Base {
     @Override
     public String toString() {
         return "Son{" +
-                "name='" + name + '\'' +
+                "name='" + name + '\'' + "," +
+                "id='" + super.getId() + '\'' +
                 '}';
     }
 }

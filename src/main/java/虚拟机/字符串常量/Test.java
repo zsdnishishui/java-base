@@ -13,17 +13,13 @@ public class Test {
 
         System.out.println(str2.intern() == str2);//"java在StringBuilder()之前已经出现过",所以intern()返回的引用与新创建的引用不是同一个
 
-        System.out.println(str3 == str4);
-        Integer i1 = 100;
-        Integer i2 = 100;
-        Integer i3 = 200;
-        Integer i4 = 200;
+        System.out.println(str3.intern() == str4.intern());
 
-        // i1 和 i2 是相同的对象，因为它们的值在缓存范围内
-        System.out.println(i1 == i2);  // 输出: true
-
-        // i3 和 i4 不是相同的对象，因为它们的值超出了缓存范围
-        System.out.println(i3 == i4);  // 输出: false
+        String a = new String("abc") + new String("def");
+//        a.intern();
+        String b = "abcdef";
+//        a.intern();
+        System.out.println(a == b);
 
     }
 }
